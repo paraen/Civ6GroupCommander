@@ -110,6 +110,7 @@ Civ6GroupCommander/
 ## 作者
 
 - 作者：**Group Commander Project**（panzhen）
+- 源码仓库：<https://github.com/paraen/Civ6GroupCommander>
 - 问题反馈：GitHub Issues
 
 ## 许可
