@@ -1,0 +1,18 @@
+# 离线测试依赖（lupa 二进制扩展，体积大，按需自行安装）
+.test-deps/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# 编辑器 / 系统
+.vs/
+.vscode/
+*.user
+*.suo
+Thumbs.db
+Desktop.ini
+
+# 游戏日志与本地输出
+*.log
+dist/

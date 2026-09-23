@@ -1,0 +1,13 @@
+local saved,handler;
+Players={[0]={SetProperty=function(_,key,value) assert(key=="GC_MarchV2"); saved=value; end}};
+GameEvents={GC_SaveMarchV2={Add=function(fn) handler=fn; end}};
+assert(load(GC_TestSaveSource))();
+handler(0,{value="2,0,8,1,0,0,-1;1,8,0,0,1,-1"}); assert(saved and saved~="");
+local original=saved;
+handler(0,{value="2,1,8,1,0,0,-1"}); assert(saved==original);
+handler(0,{value="invalid"}); assert(saved==original);
+handler(0,{value=string.rep("1",12001)}); assert(saved==original);
+handler(1,{value=""}); assert(saved==original);
+handler(0,{action="clear",value="0"}); assert(saved=="");
+handler(0,{value=original}); handler(0,{action="clear"}); assert(saved=="","explicit clear survives an omitted value");
+print("SAVE BRIDGE VALIDATION TESTS PASSED");

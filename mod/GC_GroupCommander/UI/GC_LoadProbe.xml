@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Name="GC_LoadProbe">
+  <Container ID="UnitAnchors"/>
+  <Container ID="RallyAnchors"/>
+  <Box ID="SelectionRect" Anchor="L,T" Size="1,1" Color="40,190,220,65" Hidden="1" ConsumeMouse="0"/>
+  <Box ID="GCPanel" Anchor="L,T" Offset="380,80" Size="512,44" Color="16,24,32,245" ConsumeMouse="1">
+    <Label ID="TitleLabel" Offset="14,10" FontSize="18" Color="255,224,140,255" String="单位群控"/>
+    <GridButton ID="DiagnosticsButton" Anchor="R,T" Offset="12,7" Size="96,30" Style="ButtonLightWeightGrid" String="诊断信息"/>
+    <Box ID="DiagnosticsPanel" Offset="0,44" Size="512,136" Color="16,24,32,255" Hidden="1" ConsumeMouse="1">
+      <Label ID="BuildLabel" Offset="14,8" FontSize="13"/>
+      <Label ID="StateLabel" Offset="14,32" FontSize="13" TruncateWidth="480"/>
+      <Label ID="ResultLabel" Offset="14,56" FontSize="13" TruncateWidth="480"/>
+      <GridButton ID="SelfTestButton" Offset="14,86" Size="150,32" Style="ButtonLightWeightGrid" String="自检（只读）"/>
+      <Label ID="StageLabel" Offset="180,94" FontSize="13"/>
+    </Box>
+  </Box>
+  <Box ID="SelectionPanel" Anchor="L,T" Offset="380,124" Size="512,258" Color="16,24,32,245" ConsumeMouse="1">
+    <Label Offset="14,8" FontSize="13" Color="140,190,205,255" String="01  选取单位"/>
+    <GridButton ID="ModeButton" Offset="14,30" Size="184,32" Style="ButtonLightWeightGrid"/>
+    <GridButton ID="AutoButton" Offset="204,30" Size="104,32" Style="ButtonLightWeightGrid" FontSize="13" String="自动交战：关"/>
+    <GridButton ID="ClearButton" Offset="314,30" Size="184,32" Style="ButtonLightWeightGrid"/>
+    <Label ID="SelectionCount" Offset="14,70" FontSize="14" Color="255,224,140,255" TruncateWidth="484"/>
+    <Label Offset="14,98" FontSize="13" Color="140,190,205,255" String="02  筛选类别"/>
+    <GridButton ID="FilterButton" Offset="140,92" Size="358,32" Style="ButtonLightWeightGrid" FontSize="14"/>
+    <Label ID="SelectionStatus" Offset="14,132" FontSize="13" Color="225,230,235,255" TruncateWidth="484"/>
+    <Label Offset="14,158" FontSize="13" Color="140,190,205,255" String="03  下达命令 · 右键预览后执行"/>
+    <GridButton ID="RallyExecute" Offset="14,182" Size="236,32" Style="ButtonLightWeightGrid"/>
+    <GridButton ID="MarchStop" Offset="262,182" Size="236,32" Style="ButtonLightWeightGrid" String="停止全部命令"/>
+    <Label ID="RallyStatus" Offset="14,220" FontSize="13" Color="225,230,235,255" TruncateWidth="484"/>
+  </Box>
+  <Box Anchor="L,T" Offset="380,382" Size="512,34" Color="25,42,51,245" ConsumeMouse="1">
+    <Label ID="MarchStatus" Offset="14,8" FontSize="13" Color="255,224,140,255" TruncateWidth="484"/>
+  </Box>
+  <Box ID="FilterPanel" Anchor="L,T" Offset="380,422" Size="512,270" Color="16,24,32,255" ConsumeMouse="1" Hidden="1">
+    <Label ID="FilterPath" Offset="14,10" FontSize="13" TruncateWidth="484" Color="255,224,140,255"/>
+    <GridButton ID="FilterApply" Offset="14,34" Size="236,30" Style="ButtonLightWeightGrid"/>
+    <GridButton ID="FilterBack" Offset="262,34" Size="128,30" Style="ButtonLightWeightGrid" String="返回上级"/>
+    <GridButton ID="FilterClose" Offset="398,34" Size="100,30" Style="ButtonLightWeightGrid" String="关闭筛选"/>
+    <Label Offset="14,72" FontSize="12" Color="180,195,205,255" String="带 > 的类别可展开；选用此类可包含全部子类"/>
+    <Container ID="FilterChoices" Offset="14,100" Size="484,190"/>
+  </Box>
+  <Instance Name="GC_FilterChoice">
+    <GridButton ID="Button" Anchor="L,T" Size="236,32" Style="ButtonLightWeightGrid" FontSize="13"/>
+  </Instance>
+  <Instance Name="GC_UnitAnchor">
+    <ZoomAnchor ID="Anchor" ZoomOffsetNear="0,0,0" ZoomOffsetFar="0,0,0">
+      <Container ID="ScreenPoint" Anchor="C,C" Size="1,1" ConsumeMouse="0"/>
+      <Label ID="Marker" Anchor="C,C" Offset="0,0" FontSize="24" Color="0,255,255,255" Hidden="1" ConsumeMouse="0"/>
+    </ZoomAnchor>
+  </Instance>
+  <Instance Name="GC_RallyAnchor">
+    <ZoomAnchor ID="Anchor" ZoomOffsetNear="0,0,0" ZoomOffsetFar="0,0,0">
+      <Label ID="Marker" Anchor="C,C" Offset="0,26" FontSize="22" FontStyle="Shadow" Color="255,224,90,255" ConsumeMouse="0"/>
+    </ZoomAnchor>
+  </Instance>
+</Context>

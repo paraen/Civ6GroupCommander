@@ -1,0 +1,10 @@
+# 游戏按原样读取本仓库文件（.modinfo / .lua / .xml），因此禁止 Git 做换行符转换，
+# 保证 clone、checkout 后的字节与安装到游戏 Mods 目录的版本一致。
+* -text
+
+# 二进制资源不做文本差异
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.dds binary
+*.zip binary

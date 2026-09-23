@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="e77c36ce-6992-4d2b-a4e8-f0432196f805" version="1">
+  <Properties>
+    <Name>文明六群控（协同进攻与自动交战测试版）</Name>
+    <Description>构建：20260923-p2.7。风云变幻单人测试：分层筛选、双击屏幕同兵种、陆地跨回合行军与迷雾目标、陆地接敌后重查攻击。右键预览后执行。支持存档恢复行军（待实测）；存档时未确认的执行中单位不自动重放。</Description>
+    <Teaser>分层筛选己方单位，预览并执行集结或群体攻击。</Teaser>
+    <Authors>Group Commander Project</Authors>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+    <AffectsSavedGames>0</AffectsSavedGames>
+  </Properties>
+  <ActionCriteria>
+    <Criteria id="GC_Expansion2"><GameCoreInUse>Expansion2</GameCoreInUse></Criteria>
+  </ActionCriteria>
+  <InGameActions>
+    <AddGameplayScripts id="GC_SaveBridge" criteria="GC_Expansion2"><File>Scripts/GC_Save.lua</File></AddGameplayScripts>
+    <ImportFiles id="GC_ProbeFiles">
+      <File>UI/GC_Auto.lua</File>
+      <File>UI/GC_Pursuit.lua</File>
+      <File>UI/GC_LoadProbe.xml</File>
+      <File>UI/GC_LoadProbe.lua</File>
+      <File>UI/GC_Selection.lua</File>
+      <File>UI/GC_WorldInput.lua</File>
+      <File>UI/GC_UnitFlags.lua</File>
+      <File>UI/GC_Rally.lua</File>
+      <File>UI/GC_Filters.lua</File>
+      <File>UI/GC_Attack.lua</File>
+      <File>UI/GC_March.lua</File>
+    </ImportFiles>
+    <AddUserInterfaces id="GC_ProbeUI">
+      <Properties>
+        <Context>InGame</Context>
+      </Properties>
+      <File>UI/GC_LoadProbe.xml</File>
+    </AddUserInterfaces>
+    <ReplaceUIScript id="GC_WorldInput" criteria="GC_Expansion2">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>WorldInput</LuaContext>
+        <LuaReplace>UI/GC_WorldInput.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="GC_UnitFlags" criteria="GC_Expansion2">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>UnitFlagManager</LuaContext>
+        <LuaReplace>UI/GC_UnitFlags.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+  </InGameActions>
+  <Files>
+    <File>UI/GC_Auto.lua</File>
+    <File>UI/GC_Pursuit.lua</File>
+    <File>Scripts/GC_Save.lua</File>
+    <File>UI/GC_LoadProbe.xml</File>
+    <File>UI/GC_LoadProbe.lua</File>
+    <File>UI/GC_Selection.lua</File>
+    <File>UI/GC_WorldInput.lua</File>
+    <File>UI/GC_UnitFlags.lua</File>
+    <File>UI/GC_Rally.lua</File>
+    <File>UI/GC_Filters.lua</File>
+    <File>UI/GC_Attack.lua</File>
+    <File>UI/GC_March.lua</File>
+  </Files>
+</Mod>
+
