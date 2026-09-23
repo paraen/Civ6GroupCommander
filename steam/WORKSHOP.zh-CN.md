@@ -16,6 +16,7 @@
 
 1. Steam → **库** → 左上角筛选下拉选 **工具**（Tools）。
 2. 找到 **Sid Meier's Civilization VI Development Tools**，右键 → **安装**。
+   - App ID 是 `404350`（类型：工具，仅 Windows）；想省一步可以直接打开一键安装链接：`steam://install/404350`
    - 这是官方开发工具包，内含 **ModBuddy、FireTuner、Steam Workshop Uploader**。
    - 会提示安装 Microsoft Visual Studio Shell；按提示装完再启动 SDK。
    - 另有约 20 GB 的 **Development Assets**（美术资源包），**只做美术/3D 才需要，本模组不需要装**。
